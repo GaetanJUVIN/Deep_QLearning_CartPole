@@ -48,7 +48,7 @@ class Agent():
         if np.random.rand() <= self.exploration_rate:
             return random.randrange(self.action_size)
         act_values = self.brain.predict(state)
-        return np.argmax(act_values[0])  # returns action
+        return np.argmax(act_values[0])
 
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
